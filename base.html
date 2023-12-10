@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Derivative Calculator</title>
+    <link href="{{ url_for('static',filename='css/style.css') }}" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}" type="text/javascript"></script>
+    <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/startup.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1><a href="{{ url_for('main') }}" id="header-link">Derivative Calculator</a>
+        </h1>
+        <div id="status">
+            
+        </div>
+    </header>
+    <br>
+    <div class="container centre"  width="960">
+        <form name="myForm" action="{{ url_for('submit') }}" onkeypress="return AvoidSpace(event)"
+            onsubmit="return validateForm()" method="POST" required>
+            <input type="text" name="input" placeholder="Enter an expression..." autocapitalize="none" autofocus />
+        </form>
+    </div>
+    {% block body %} {% endblock %}
+    <div class="container">
+        <footer>
+            <h2>Applications of Derivative :</h2>
+            <ul type="square">
+                <li>Computer Science: Derivatives find applications in computer graphics, machine learning, and optimization algorithms. They are used to compute gradients for training neural networks, optimize algorithms, and solve problems related to image processing and computer vision.</li>
+                <li>Physics: Derivatives are used extensively in physics to analyze motion, velocity, acceleration, and forces.</li>
+                <li>Economics: Derivatives are employed in economics to analyze rates of change, optimization problems, marginal analysis, and elasticity.</li>
+                <li>Engineering: Engineers use derivatives to analyze and optimize systems. For instance, derivatives are essential in electrical engineering for analyzing circuits, in mechanical engineering for studying motion and forces, and in chemical engineering for modeling reaction rates.</li>
+                <li>Medicine: Derivatives are applied in medical fields to model physiological processes, study drug dosage optimization, and analyze medical imaging techniques. They help quantify rates of change in variables such as blood pressure, heart rate, and drug concentration.</li>
+                <li>Environmental Science: Derivatives are utilized in environmental studies to model and predict changes in natural systems.</li>
+                <br>
+                <br>
+                <br>
+
+            </ul>
+        </footer>
+    </div>
+</body>
+
+</html>
